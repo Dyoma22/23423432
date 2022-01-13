@@ -2,12 +2,12 @@
 
 from tkinter import * 
 tk = Tk() 
-c = Canvas(tk, width=500, height=500, bg="white") 
-c.create_oval((0,0,90,90))#Лицо
-c.create_oval((25,20,35,30))#Глаза
-c.create_oval((50,20,60,30))#Глаза
-c.create_arc((20,40,70,70))#нос
-c.create_arc((20,70,70,70), style=CHORD, start=0, extent=150)#рот
+c = Canvas(tk, width=500, height=700, bg="white") 
+c.create_oval((15,15,450,450))#Лицо
+c.create_oval((125,100,175,150))#Глаза
+c.create_oval((250,100,300,150))#Глаза
+c.create_arc((175,200,350,350))#нос
+c.create_arc((100,350,350,350), style=CHORD, start=0, extent=150)#рот
 c.pack() 
 tk.mainloop() 
 
@@ -19,8 +19,7 @@ def kontroll():
     elif v.get()==2:
         print("teisipäev")
 
-        
-    #...
+
 win=Tk()
 win.title("Okno")
 win.geometry("200x200")
