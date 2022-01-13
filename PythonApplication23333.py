@@ -9,7 +9,9 @@ c.create_oval((250,100,300,150))#Глаза
 c.create_arc((175,200,350,350))#нос
 c.create_arc((100,350,350,350), style=CHORD, start=0, extent=150)#рот
 c.pack() 
-tk.mainloop() 
+tk.mainloop()
+head=CheckButton(fm,text="Head")
+head.pack(side=TOP)
 
 from tkinter import *
 def kontroll():
