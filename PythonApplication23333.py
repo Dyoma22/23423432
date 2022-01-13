@@ -1,16 +1,25 @@
 #Пример 1
 
 from tkinter import * 
-tk = Tk() 
-c = Canvas(tk, width=500, height=700, bg="white") 
+tk = Tk()
+fm=Frame(tk)
+fm.pack(side=BOTTOM)
+c = Canvas(tk, width=500, height=600, bg="white") 
 c.create_oval((15,15,450,450))#Лицо
 c.create_oval((125,100,175,150))#Глаза
 c.create_oval((250,100,300,150))#Глаза
 c.create_arc((175,200,350,350))#нос
 c.create_arc((100,350,350,350), style=CHORD, start=0, extent=150)#рот
 c.pack() 
-tk.mainloop()
-head=CheckButton(fm,text="Head")
+head=Checkbutton(fm,text="Head",font="Arial 25",fg="lightblue")
+mouth=Checkbutton(fm,text="Mouth",font="Arial 25",fg="lightblue")
+lefteye=Checkbutton(fm,text="Left Eye",font="Arial 25",fg="lightblue")
+nose=Checkbutton(fm,text="Nose",font="Arial 25",fg="lightblue")
+righteye=Checkbutton(fm,text="Right eye",font="Arial 25",fg="lightblue")
+head.pack(side=TOP)
+head.pack(side=TOP)
+head.pack(side=TOP)
+head.pack(side=TOP)
 head.pack(side=TOP)
 
 from tkinter import *
@@ -38,5 +47,6 @@ rad2.pack()
 lbl.pack()
 
 win.mainloop()
+tk.mainloop
 
 
