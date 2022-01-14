@@ -1,5 +1,43 @@
-#Пример 1
+def head1():
+    global var_head
+    global c
+    if var_head.get()=="on":
+        c.create_oval((15,15,450,450))
+    elif var_head.get()=="off":
+        c.create_oval((15,15,450,450),outline="white")
 
+def lefteye1():
+    global var_lefteye
+    global c
+    if var_lefteye.get()=="on":
+        c.create_oval((125,100,175,150))
+    elif var_lefteye.get()=="off":
+        c.create_oval((125,100,175,150),outline="white")
+
+def righteye1():
+    global var_righteye
+    global c
+    if var_righteye.get()=="on":
+        c.create_oval((250,100,300,150))
+    elif var_righteye.get()=="off":
+       c.create_oval((250,100,300,150),outline="white")
+
+def nose1():
+    global var_nose
+    global c
+    if var_nose.get()=="on":
+        c.create_arc((175,200,350,350))
+    elif var_nose.get()=="off":
+       c.create_arc((175,200,350,350),outline="white")
+
+def mouth1():
+    global var_mouth
+    global c
+    if var_nose.get()=="on":
+        c.create_arc((100,350,350,350),style=CHORD, start=0, extent=150)
+    elif var_nose.get()=="off":
+       c.create_arc((100,350,350,350),style=CHORD, start=0, extent=150, outline="white")
+        
 from tkinter import * 
 tk = Tk()
 fm=Frame(tk)
@@ -10,17 +48,22 @@ c.create_oval((125,100,175,150))#Глаза
 c.create_oval((250,100,300,150))#Глаза
 c.create_arc((175,200,350,350))#нос
 c.create_arc((100,350,350,350), style=CHORD, start=0, extent=150)#рот
-c.pack() 
-head=Checkbutton(fm,text="Head",font="Arial 25",fg="lightblue")
-mouth=Checkbutton(fm,text="Mouth",font="Arial 25",fg="lightblue")
-lefteye=Checkbutton(fm,text="Left Eye",font="Arial 25",fg="lightblue")
-nose=Checkbutton(fm,text="Nose",font="Arial 25",fg="lightblue")
-righteye=Checkbutton(fm,text="Right eye",font="Arial 25",fg="lightblue")
+c.pack()
+var_head=StringVar()
+head=Checkbutton(fm,text="Head",font="Arial 25",fg="lightblue",variable=var_head,onvalue="on",offvalue="off",command=head1)
+var_mouth=StringVar()
+mouth=Checkbutton(fm,text="Mouth",font="Arial 25",fg="lightblue",variable=var_mouth,onvalue="on",offvalue="off",command=mouth1)
+var_lefteye=StringVar()
+lefteye=Checkbutton(fm,text="Left Eye",font="Arial 25",fg="lightblue",variable=var_lefteye,onvalue="on",offvalue="off",command=lefteye1)
+var_nose=StringVar()
+nose=Checkbutton(fm,text="Nose",font="Arial 25",fg="lightblue",variable=var_nose,onvalue="on",offvalue="off",command=nose1)
+var_righteye=StringVar()
+righteye=Checkbutton(fm,text="Right eye",font="Arial 25",fg="lightblue",variable=var_righteye,onvalue="on",offvalue="off",command=righteye1)
 head.pack(side=TOP)
-head.pack(side=TOP)
-head.pack(side=TOP)
-head.pack(side=TOP)
-head.pack(side=TOP)
+mouth.pack(side=TOP)
+lefteye.pack(side=TOP)
+righteye.pack(side=TOP)
+nose.pack(side=TOP)
 
 from tkinter import *
 def kontroll():
@@ -41,9 +84,7 @@ rad2=Radiobutton(win,text="Kaks", variable=v,value=2,command=kontroll)
 lbl=Label(win, text="...")
 
 rad1.pack()
-
 rad2.pack()
-
 lbl.pack()
 
 win.mainloop()
