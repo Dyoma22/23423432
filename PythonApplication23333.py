@@ -2,11 +2,11 @@ def head1():
     global var_head
     global c
     if var_head.get()=="on":
-        c.create_oval((15,15,450,450),fill="red",outline="black")
-        c.create_oval((125,100,175,150))
-        c.create_oval((250,100,300,150))
-        c.create_rectangle((250,250,200,200))
-        c.create_arc((100,350,350,350), style=CHORD, start=0, extent=150)
+        c.create_oval((15,15,450,450),fill="pink",outline="black")
+        c.create_oval((125,100,175,150),fill="green")
+        c.create_oval((250,100,300,150),fill="green")
+        c.create_rectangle((250,250,200,200),fill="yellow")
+        c.create_arc((100,350,350,350),outline="lightblue", style=CHORD, start=0, extent=150)
     elif var_head.get()=="off":
         c.create_oval((15,15,450,450),fill="white",outline="white")
         c.create_oval((125,100,175,150))
@@ -18,44 +18,44 @@ def lefteye1():
     global var_lefteye
     global c
     if var_lefteye.get()=="on":
-        c.create_oval((125,100,175,150))
+        c.create_oval((125,100,175,150),fill="green")
     elif var_lefteye.get()=="off":
-        c.create_oval((125,100,175,150),fill="red",outline="red")
+        c.create_oval((125,100,175,150),fill="pink",outline="pink")
 
 def righteye1():
     global var_righteye
     global c
     if var_righteye.get()=="on":
-        c.create_oval((250,100,300,150))
+        c.create_oval((250,100,300,150),fill="green")
     elif var_righteye.get()=="off":
-       c.create_oval((250,100,300,150),fill="red",outline="red")
+       c.create_oval((250,100,300,150),fill="pink",outline="pink")
 
 def nose1():
     global var_nose
     global c
     if var_nose.get()=="on":
-        c.create_rectangle((250,250,200,200))
+        c.create_rectangle((250,250,200,200),fill="yellow")
     elif var_nose.get()=="off":
-       c.create_rectangle((250,250,200,200),fill="red",outline="red")
+       c.create_rectangle((250,250,200,200),fill="pink",outline="pink")
 
 def mouth1():
     global var_mouth
     global c
     if var_mouth.get()=="on":
-        c.create_arc((100,350,350,350),outline="black", style=CHORD, start=0, extent=150)
+        c.create_arc((100,350,350,350),outline="lightblue", style=CHORD, start=0, extent=150)
     elif var_mouth.get()=="off":
-       c.create_arc((100,350,350,350),fill="red",outline="red", style=CHORD, start=0, extent=150,)
+       c.create_arc((100,350,350,350),fill="pink",outline="pink", style=CHORD, start=0, extent=150,)
         
 from tkinter import * 
 tk = Tk()
 fm=Frame(tk)
 fm.pack(side=BOTTOM)
 c = Canvas(tk, width=500, height=600, bg="white") 
-c.create_oval((15,15,450,450),fill="red")#Лицо
-c.create_oval((125,100,175,150))#Глаза
-c.create_oval((250,100,300,150))#Глаза
-c.create_rectangle((250,250,200,200))#нос
-c.create_arc((100,350,350,350), style=CHORD, start=0, extent=150)#рот
+c.create_oval((15,15,450,450),fill="pink")#Лицо
+c.create_oval((125,100,175,150),fill="green")#Глаза
+c.create_oval((250,100,300,150),fill="green")#Глаза
+c.create_rectangle((250,250,200,200),fill="yellow")#нос
+c.create_arc((100,350,350,350),outline="lightblue", style=CHORD, start=0, extent=150)#рот
 c.pack()
 var_head=StringVar()
 head=Checkbutton(fm,text="Head",font="Arial 25",fg="red",variable=var_head,onvalue="on",offvalue="off",command=head1)
