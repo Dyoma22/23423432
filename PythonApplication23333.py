@@ -2,17 +2,17 @@ def head1():
     global var_head
     global c
     if var_head.get()=="on":
-        c.create_oval((15,15,450,450),fill="red",outline="white")
+        c.create_oval((15,15,450,450),fill="red",outline="black")
         c.create_oval((125,100,175,150))
         c.create_oval((250,100,300,150))
         c.create_rectangle((250,250,200,200))
         c.create_arc((100,350,350,350), style=CHORD, start=0, extent=150)
     elif var_head.get()=="off":
         c.create_oval((15,15,450,450),fill="white",outline="white")
-        c.create_oval((125,100,175,150),fill="white",outline="white")
-        c.create_oval((250,100,300,150),fill="white",outline="white")
-        c.create_rectangle((250,250,200,200),fill="white",outline="white")
-        c.create_arc((100,350,350,350), style=CHORD, start=0, extent=150,fill="white",outline="white")
+        c.create_oval((125,100,175,150))
+        c.create_oval((250,100,300,150))
+        c.create_rectangle((250,250,200,200))
+        c.create_arc((100,350,350,350), style=CHORD, start=0, extent=150,outline="black")
 
 def lefteye1():
     global var_lefteye
